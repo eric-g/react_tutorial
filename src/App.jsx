@@ -7,7 +7,7 @@ const Hello = (props) => {
 
 const Footer = (props) => {
   return (
-    <div>All content egaus {props.date}</div>
+    <div>All content egaus! {props.date}</div>
   )
 }
 
