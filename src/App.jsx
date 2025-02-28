@@ -1,25 +1,38 @@
-const Hello = (props) => {
-  console.log(props)
-  return (
-    <div>Hello {props.name}</div>
-  )
+const Header = (props) => {
+
 }
 
-const Footer = (props) => {
-  return (
-    <div>All content egaus! {props.date}</div>
-  )
+const Content = () => {
+
+}
+
+const Total = () => {
+
 }
 
 const App = () => {
-  const now = new Date()
-  const name = "Eric!"
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
+
   return (
-    <>
-      <p>Hello world, it is {now.toDateString()}</p>
-      <Hello name={name} />
-      <Footer date={now.getFullYear()} />
-    </>
+    <div>
+      <h1>{course}</h1>
+      <p>
+        {part1} {exercises1}
+      </p>
+      <p>
+        {part2} {exercises2}
+      </p>
+      <p>
+        {part3} {exercises3}
+      </p>
+      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+    </div>
   )
 }
 
