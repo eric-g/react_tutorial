@@ -1,57 +1,25 @@
-import Course from './components/Course'
+import { useState, useEffect } from 'react'
+import Note from './components/Note'
+import axios from 'axios'
 
 const App = () => {
-  const courses = [
-    {
-    id: 1,
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10,
-        id: 1
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7,
-        id: 2
-      },
-      {
-        name: 'State of a component',
-        exercises: 14,
-        id: 3
-      },
-      {
-        name: 'Redux',
-        exercises: 11,
-        id: 4
-      }
-    ]
-  },
-  {
-    id: 2,
-    name: 'Node.js',
-    parts: [
-      {
-        name: 'Routing',
-        exercises: 10,
-        id: 5
-      },
-      {
-        name: 'Middlewares',
-        exercises: 7,
-        id: 6
-      }
-    ]
-  }
-]
 
-  return (
-    <div>
-        <h1>Web Development Curriculum</h1>
-        {courses.map(course => <Course key={course.id} course={course} />)}
-    </div>
-  )
+  const [notes, setNotes] = useState([])
+  const [newNote, setNewNote] = useState('')
+  const [showAll, setShowAll] = useState(true)
+
+  const hook = () => {
+    console.log('effect')
+    axios
+      .get('http://localhost:3001/notes')
+      .then(response => {
+        console.log('promise fulfilled')
+        setNotes(response.data)
+      })
+  }
+  useEffect(hook, [])
+  console.log('render', notes.length, 'notes')
+
 }
 
 export default App
