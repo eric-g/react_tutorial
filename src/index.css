@@ -1,0 +1,25 @@
+h2 {
+    color: green;
+    font-style: italic;
+    margin: 5px;
+  }
+
+  .message {
+    color: green;
+    background: lightgrey;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 1px;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  .error {
+    color: red;
+    background: lightgrey;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 1px;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
