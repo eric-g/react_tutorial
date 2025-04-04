@@ -3,6 +3,7 @@
 h1 {
     color: darkslategray;
     font-style: italic;
+    margin: 0px
   }
 
 .note {
@@ -21,8 +22,15 @@ h1 {
     margin-bottom: 5px;
   }
 
-
-*, *:before, *:after, input[type="search"] { box-sizing: border-box }
+  .success {
+    color: green;
+    background: lightgrey;
+    font-size: 14px;
+    border-style: solid;
+    border-radius: 1px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
 
 html {
   font-family: 'Open Sans', sans-serif;

@@ -30,6 +30,10 @@ const App = () => {
     .then((response) => {
       setNotes(notes.concat(response))
       setNewNote('')
+      setErrorMessage({message: 'Added a new note', className: 'success'})
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000)
     })
   }
 
@@ -64,7 +68,7 @@ const App = () => {
           setNotes(notes.filter((n) => n.id !== id))
         })
         .catch((error) => {
-          setErrorMessage(`Note '${note.content}' was already deleted from server`)
+          setErrorMessage({className: 'error', message: `Note '${note.content}' was already deleted from server`})
           setTimeout(() => {
             setErrorMessage(null)
           }, 5000)

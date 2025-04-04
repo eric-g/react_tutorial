@@ -1,10 +1,10 @@
 const Notification = ({ message }) => {
    
     return (
-        <div style={{height:25, paddingBottom:10, display:'block'}}>
+        <div style={{height:25, marginBottom:10, display:'block'}}>
             {message ? 
-                <div className='error'>
-                    {message}
+                <div className={message.className}>
+                    {message.message}
                 </div>
                 : <div></div>}
             
