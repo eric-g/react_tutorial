@@ -55,6 +55,24 @@ const App = () => {
       })
   }
 
+  const deleteNote = (id) => {
+    const note = notes.find(n => n.id === id)
+    if (window.confirm(`Delete ${note.content}?`)) {
+      noteService
+        .deleteNote(id)
+        .then(() => {
+          setNotes(notes.filter((n) => n.id !== id))
+        })
+        .catch((error) => {
+          setErrorMessage(`Note '${note.content}' was already deleted from server`)
+          setTimeout(() => {
+            setErrorMessage(null)
+          }, 5000)
+          setNotes(notes.filter((n) => n.id !== id))
+        })
+    }
+  }
+
   const notesToShow = showAll ? notes : notes.filter((note) => note.important)
 
   return (
@@ -68,11 +86,11 @@ const App = () => {
       </div>
       <ul>
         {notesToShow.map((note) => (
-          <Note key={note.id} note={note} toggleImportance={() => toggleImportanceOf(note.id)}/>
+          <Note key={note.id} note={note} deleteNote={() => deleteNote(note.id)} toggleImportance={() => toggleImportanceOf(note.id)}/>
         ))}
       </ul>
-      <form onSubmit={addNote}>
-        <input value={newNote} onChange={handleNoteChange} />
+      <form className="forms" onSubmit={addNote}>
+        <input value={newNote} onChange={handleNoteChange} />&nbsp;&nbsp;
         <button type="submit">save</button>
       </form>
       <Footer />
