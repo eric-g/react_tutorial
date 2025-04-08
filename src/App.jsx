@@ -35,6 +35,12 @@ const App = () => {
         setErrorMessage(null)
       }, 5000)
     })
+    .catch((error) => {
+      setErrorMessage({message: `${error.response.data.error}`, className: 'error' })
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000)
+    })
   }
 
   const handleNoteChange = (event) => {
@@ -94,7 +100,7 @@ const App = () => {
         ))}
       </ul>
       <form className="forms" onSubmit={addNote}>
-        <input value={newNote} onChange={handleNoteChange} />&nbsp;&nbsp;
+        <input value={newNote} onChange={handleNoteChange} />
         <button type="submit">save</button>
       </form>
       <Footer />

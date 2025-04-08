@@ -39,7 +39,8 @@ html {
 }
 
 button {
-    margin: 5px;
+    margin-left: 5px;
+    vertical-align: bottom;
 }
 
 .forms {
@@ -55,25 +56,12 @@ button {
     font-size: 1.2em;
   }
   
-  label {
-    display: block;
-    margin: 1em 0;
-    
-    b {
-      font-weight: normal;
-    }
-    
-    textarea, select, input[type="text"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], input[type="password"], input[type="color"], input[type="file"], input[type="color"], input[type="number"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"] {
-      display: block;
-      width: 100%;
-    }
-  }
-  
-  textarea, select, input[type="text"], input[type="email"], input[type="search"], input[type="tel"], input[type="url"], input[type="password"], input[type="color"], input[type="file"], input[type="color"], input[type="number"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"] {
-      margin: .2em 0;
+  textarea, select, input {
+      margin: .2em .2em 0 .5em;
       padding: .25em .4em;
-      border: 1px solid #ddd;
-      max-width: 100%; 
+      border: 1px solid lightgrey;
+      width: 15%; 
+      background-color: rgb(229, 244, 249);
   }
   
 }
