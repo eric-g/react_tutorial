@@ -1,3 +1,4 @@
 # Notes app frontend using React + Vite
 
-The notes branch is the frontend of the introdemo_backend project.
+This is the frontend UI for the Notes app.
+It should be built from the backend project using scripts that are provided.
